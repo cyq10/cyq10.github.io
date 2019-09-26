@@ -1,8 +1,17 @@
 <html>
 <body>
-<h1>我叫陈永强.</h1>
-    <p>我的学号是<span id="studentnumber">15003010205</span>
+<h1>我叫<span id="myname">.</h1>
+    <p>我的学号是<span id="mynumber"></span>
     </p>
     <img src="IMG_20190910_205257.jpg">
+    <script src="jquery-3.4.1.js"></script>
+    <script>
+    $(function(){
+        $.get("./data.json",function(result){
+            $("#myname").text(result.myname);
+            $("#mynumber").text(result.mynumber);
+        });
+    })
+        </script>
 </body>
 </html>
